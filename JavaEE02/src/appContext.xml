@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="commonStick" class="OwnedMagicStick" scope="prototype">
+        <property name="length" value="30"/>
+        <property name="core" value="unicorn hair"/>
+        <property name="treeType" value="oac"/>
+    </bean>
+
+    <bean id="strongStick" class="OwnedMagicStick" scope="prototype">
+        <property name="length" value="27"/>
+        <property name="core" value="dragon vessel"/>
+        <property name="treeType" value="elm tree"/>
+    </bean>
+
+    <bean id="strongWMage" class="WhiteMage" scope="prototype">
+        <constructor-arg value="25"/>
+        <constructor-arg ref="strongStick"/>
+        <property name="spells">
+            <list>
+                <value>reducto</value>
+                <value>explosion</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="strongBMage" class="BlackMage" scope="prototype">
+        <constructor-arg value="25"/>
+        <constructor-arg ref="commonStick"/>
+        <property name="spells">
+            <list>
+                <value>avadakedavra</value>
+                <value>grucio</value>
+            </list>
+        </property>
+    </bean>
+</beans>
