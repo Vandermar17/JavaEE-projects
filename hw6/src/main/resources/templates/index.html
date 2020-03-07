@@ -1,0 +1,32 @@
+<!DOCTYPE html>​
+<html xmlns:th="http://www.thymeleaf.org">​
+<head>​
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />​
+    <title>Index</title>​
+</head>​
+<body>​
+<form action="/add-book" method="post">
+    <input type="text" id="name" name="name"><br><br>
+    <input type="text" id="isbn" name="isbn"><br><br>
+    <input type="text" id="author" name="author"><br><br>
+    <button type="submit">Submit</button>
+    <!--
+    <button type="submit" formmethod="post">Submit using POST</button>
+    -->
+    <table>​
+        <thead>​
+        <th>name</th>​
+        <th>isbn</th>​
+        <th>author</th>​
+        </thead>​
+        <tbody>​
+        <tr th:each="book: ${books}">​
+            <td th:text="${book.getName()}"></td>​
+            <td th:text="${book.getIsbn()}"></td>​
+            <td th:text="${book.getAuthor()}"></td>​
+        </tr>​
+        </tbody>​
+    </table>
+</form>
+</body>​
+</html>​
