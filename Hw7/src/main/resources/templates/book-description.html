@@ -1,0 +1,12 @@
+<!DOCTYPE html>​
+<html xmlns:th="http://www.thymeleaf.org">​
+<head>​
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />​
+    <title>Book Desc</title>​
+</head>​
+<body>​
+Description of the book: <th th:text="${book.getName()}"></th> <br/>
+It's author is <th th:text="${book.getAuthor()}"></th> and it's isbn is <th th:text="${book.getIsbn()}"></th>
+
+</body>​
+</html>​
